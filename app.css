@@ -1,0 +1,34 @@
+[data-content].active{
+    display: block;
+}
+
+[data-content]{
+    display: none;
+}
+
+.tabs{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid black;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.tab{
+    cursor: pointer;
+    padding: 10px;
+}
+
+.tab.active{
+    background-color: #B7CADB;
+}
+
+.tab:hover{
+    background-color: #6FB2D2;
+}
