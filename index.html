@@ -6,13 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
-    <title>password tester</title>
+    <title>Password Generator</title>
     <link rel="stylesheet" href="app.css">
     <script src="https://webgazer.cs.brown.edu/webgazer.js?" defer></script>
     <script defer src="./app.js"></script>
 </head>
 
 <body>
+    <div class="container">
+        <h1 class="title">Password Generator</h1>
+        <h3 class="password-display">Password</h3>
+        <form class="form">
+            <label for="characterAmountRange">Number Of Characters</label>
+            <div class="character-amount-container">
+                <input type="range" min="1" max="50" id="characterAmountRange" value="10">
+                <input type="number" min="1" max="50" id="characterAmountRange" value="10">
+            </div>
+
+            <label for="includeUppercase">Include UpperCase</label>
+            <input type="checkbox" name="" id="includeUppercase">
+
+            <label for="includeNumbers">Include Numbers</label>
+            <input type="checkbox" name="" id="includeNumbers">
+
+            <label for="includeSymbols">Include Symbols</label>
+            <input type="checkbox" name="" id="includeSymbols">
+
+            <button class="btn" type="submit">Generate Password</button>
+        </form>
+    </div>
 </body>
 
 </html>
