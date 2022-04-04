@@ -18,6 +18,13 @@ export default class Deck {
             this.cards[i] = oldValue;
         }
     }
+    pop() {
+        return this.cards.shift();
+    }
+
+    push(card) {
+        this.cards.push(card);
+    }
 }
 
 class Card {
@@ -33,6 +40,7 @@ class Card {
         cardDiv.innerText = this.suit;
         cardDiv.classList.add('card', this.color);
         cardDiv.dataset.value = `${this.value}${this.suit}`
+        return cardDiv;
     }
 }
 
