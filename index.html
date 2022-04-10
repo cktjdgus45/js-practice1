@@ -6,13 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
-    <title>tic tae toc</title>
+    <title>audio api </title>
     <script src="./app.js" defer></script>
     <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
-
+    <canvas id="visualizer"></canvas>
+    <div class="grid">
+        <label for="volume">Volume</label>
+        <input type="range" min="0" max="1" value=".5" step=".01">
+        <label for="bass">Bass</label>
+        <input type="range" min="-10" max="10" value="0" id="bass">
+    </div>
 </body>
 
 </html>
