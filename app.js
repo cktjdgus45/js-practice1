@@ -1,10 +1,22 @@
-//콜백함수
-const add = (a, b) => a + b;
-const multiply = (a, b) => a * b;
+class Counter {
+    #value;
+    constructor(defaultValue) {
+        if (isNaN(defaultValue) || defaultValue < 0) {
+            this.#value = 0;
+        } else {
+            this.#value = defaultValue;
+        }
+    }
+    increment() {
+        this.#value++;
+    }
 
-function calculator(a, b, action) { //action은 콜백함수/
-    let result = action(a, b);
-    console.log(result);
+    get value() {
+        return this.#value;
+    }
 }
+const counter = new Counter(0);
+counter.increment(); // 1
+counter.increment(); // 2
 
-calculator(1, 2, add);
+console.log(counter.value);
