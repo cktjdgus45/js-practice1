@@ -1,22 +1,27 @@
-class Counter {
-    #value;
-    constructor(defaultValue) {
-        if (isNaN(defaultValue) || defaultValue < 0) {
-            this.#value = 0;
-        } else {
-            this.#value = defaultValue;
-        }
-    }
-    increment() {
-        this.#value++;
-    }
+const item1 = { name: 'milk1', price: 3 };
+const item2 = { name: 'milk2', price: 4 };
+const item3 = { name: 'milk3', price: 5 };
 
-    get value() {
-        return this.#value;
-    }
-}
-const counter = new Counter(0);
-counter.increment(); // 1
-counter.increment(); // 2
+const products = [item1, item2, item3];
 
-console.log(counter.value);
+let found = products.find(value => value.name = "milk2");
+console.log(found)
+
+found = products.some(value => value.name === "milk2");
+console.log(found)
+
+found = products.every(value => value.name === "milk2");
+console.log(found)
+
+found = products.filter(value => value.price === 2);
+console.log(found)
+
+found = products.map(value => value.price * 2);
+console.log(found)
+
+let result = [1, 2, 3, 4, 5].reduce((sum, value) => {
+    sum += value;
+    return sum;
+})
+
+console.log(result)
