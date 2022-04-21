@@ -1,25 +1,32 @@
-print(); //함수의 호이스팅은 함수의 선언문 전에 호출이 가능하게 해줌.
-//함수의 선언문은 선언 이전에도 호출이 가능함.
+//동결! Object.freeze 추가x , 삭제x , 쓰기x , 속성 재정의x
+// 객체에 대한 연산은 모두 shallow 얕게 된다. 즉, 얕은 꽁꽁얼림. man을 바꿀시 dog도 바뀜 , shallow freeze라서.
+const man = { name: '차성현' };
+const dog = { name: '포포', owner: man };
+Object.freeze(dog);
+dog.name = '보리';
+dog.age = 4;
+man.name = '차유정'; //얕은 동결이라 dog도 변경이 됨.
+console.log(dog); //이름이 그대로 포포. 나이 프로퍼티도 추가 x.
 
-function print() { //함수의 선언.
-    console.log('hello')
-}
+//밀봉! Object.seal  추가x , 삭제x , (값의 수정)쓰기 o , 속성 재정의 x
 
+const cat = {};
+Object.assign(cat, dog); //assign 복사. == {...dog}
 
-//변수(let,const)와 클래스는 선언만 호이스팅이 되고 , 즉 변수의 이름 hi는 인지하는데 초기화까진 호이스팅이 되지 않음.
-//초기화는 안됨
-//초기화 전 , 변수에 접근하면 컴파일 에러가 발생.
-console.log(hi);
-let hi = 'hi';
+Object.seal(cat);
+cat.name = "야옹이";
+delete cat.owner;
+console.log(cat)
 
-const cat = new Cat();
+//Object.isFrozen(obj),Object.isSealed(obj), Object.isExtensible(obj)
 
-class Cat {
+//확장 금지 preventExtensions 추가x , 쓰기o , 속성재정의 o , 삭제 o 
 
-}
-
-let x = 1;
-{
-    console.log(x);
-    let x = 2; //블록 내부에서 스코프체인에 의해 가까운걸 받지만 밑에있으므로 선언만 되고 초기화가 안되서 에러.
-}
+const tiger = { name: '어흥' };
+Object.preventExtensions(tiger);
+tiger.name = "어흐응";
+console.log(tiger)
+delete tiger.name;
+console.log(tiger)
+tiger.age = 1;
+console.log(tiger)
