@@ -45,13 +45,13 @@ let c: any[] = [];
 
 //unknown
 
-let d: unknown;
+let d: unknown; //뭔지모른다.
 
 if (typeof d === 'number') {
-    let e = d + 1;
+    let e = d + 1; //number d
 }
 if (typeof d === 'string') {
-    let e = d.toUpperCase();
+    let e = d.toUpperCase(); //string d
 }
 
 //void -nothing return
@@ -68,5 +68,14 @@ function hello(name: string | number) {
     }
     throw new Error('xxx');
 }
+
+//function - call signicture
+//argument 에 type을 명시하지 않으면 경고가뜸. -> 안쓰고싶음.
+type Add = (a: number, b: number) => number;
+
+const add = (a: number, b: number) => a + b;
+
+const add2: Add = (a, b) => a + b; //경고가 뜨지않음 
+
 
 
