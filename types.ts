@@ -77,5 +77,28 @@ const add = (a: number, b: number) => a + b;
 
 const add2: Add = (a, b) => a + b; //경고가 뜨지않음 
 
+//overloading 오버로딩
+//함수가 여러개의 call signicture 을 가질때 발생.
+
+type Config = {
+    path: string
+    config: Config
+
+}
+
+type Push = {
+    (path: string): void
+    (config: Config): void
+}
+
+const push: Push = (config) => {
+    if (typeof config === 'string') { console.log(config) }
+    else {
+        console.log(config.path);
+    }
+}
+
+
+
 
 
