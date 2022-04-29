@@ -1,0 +1,24 @@
+{
+  "name": "js-practice",
+  "version": "1.0.0",
+  "description": "js study",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cktjdgus45/js-practice1.git"
+  },
+  "author": "cha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cktjdgus45/js-practice1/issues"
+  },
+  "homepage": "https://github.com/cktjdgus45/js-practice1#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}
