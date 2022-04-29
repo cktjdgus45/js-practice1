@@ -98,6 +98,38 @@ const push: Push = (config) => {
     }
 }
 
+//polymolphism (다형성) 
+
+//bad
+// type SuperPrint ={ //3개의 call signicture
+//     (arr:number[]):void
+//     (arr:boolean[]):void
+//     (arr:string[]):void
+// }
+
+// const superPrint:SuperPrint = (arr)=>{
+//     arr.forEach(i=>console.log(i))
+// }
+
+// superPrint([1,2,3,4])
+// superPrint([true,false,true])
+// superPrint(['1','2'])
+
+//good
+//제네릭 ,generic 은 placeholder 같은것. 확실한 타입을 모를때 generic 사용.
+type SuperPrint = {
+    <T>(arr: T[]): T
+}
+
+const superPrint: SuperPrint = (arr) => {
+    return arr[0];
+}
+
+superPrint([1, 2, 3, 4])
+superPrint([true, false, true])
+superPrint(['1', '2'])
+superPrint([1, 2, 'ㄴㄴ', true])
+
 
 
 
