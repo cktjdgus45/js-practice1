@@ -130,6 +130,77 @@ superPrint([true, false, true])
 superPrint(['1', '2'])
 superPrint([1, 2, 'ㄴㄴ', true])
 
+//Class -ts
+//abstract class(추상클래스) : 다른 클래스가 상속받을수 있는 클래스 이다.
+abstract class Human {
+    constructor(
+        protected firstName: string,
+        protected lastName: string,
+        protected nickname: string
+    ) { }
+    abstract getNickName(): void //추상 메소드 는 추상클래스를 상속받는 모든 것들이 구현을 해야만 하는 메소드를 의미한다.
+
+    getFullName() {
+        return `${this.firstName}${this.lastName}`;
+    }
+}
+
+class Man extends Human {
+    getNickName() {
+        console.log(this.nickname)
+    }
+}
+
+const poo = new Man("차", "성현", "poo");
+
+//interface - 오브젝트 모양을 특정해주기.
+
+type Visiter = {
+    name: string,
+    age: number
+}
+
+const popo: Visiter = {
+    name: 'popo',
+    age: 1
+}
+
+type Color = "red" | "blue" | "yellow";
+type Life = 1 | 5 | 10;
+type Food = string;
+type Health = 3 | 5 | 9;
+type Frineds = Array<string>;
+type Team = {
+    teamName: string,
+    team: Color
+}
+
+const kimchi: Food = 'kimchi';
+
+const totonum: Team = {
+    teamName: 'totonum',
+    team: 'blue'
+}
+
+// type Person ={} === interface Person 둘다 object의 모양을 설명
+interface Child {
+    name: string
+}
+interface Person { //겹치면 ts가 하나로 합쳐줌.
+    age: number
+}
+
+interface Person extends Child { //상속가능
+}
+
+const pooh: Person = {
+    name: 'poo',
+    age: 2
+}
+
+
+
+
 
 
 
